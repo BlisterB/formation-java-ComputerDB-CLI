@@ -51,21 +51,23 @@ git commit -m "step 1"
 ```
 Ces lignes de commandes permettent d'enregistrer votre travail à l'aide de l'outil Git.
 
+
 ### Exercice 2 : Un CLI mocké, partie 2
 Nous allons maintenant utiliser des concepts avancés de Java afin d'étoffer notre CLI.
- - Ajouter la gestion d'erreurs par exceptions
-    - un comportement interdit justifie de lever une exception
-    - ajouter un Computer donc la Company n'existe pas est-il un comportement autorisable ?
+ - Ajouter la gestion d'erreurs à l'aide des Exceptions
+    - un comportement interdit justifie de lever une Exception
+    - ajouter un Computer dont la Company n'existe pas est-il un comportement autorisable ?
  - Créer l'interface "Identifiable"
     - elle possède la méthode 'getId()'    
     - Company et Computer doivent désormais implémenter cette interface
- - Le CLI doit maintenant permettre de lister de ajouter des Company
- - Utiliser la serialization pour sauvegarder et charger la liste d'ordinateurs et de companies
+ - Le CLI doit maintenant permettre de lister et d'ajouter des Companies
+ - Utiliser la sérialisation pour sauvegarder et charger la liste des ordinateurs et des compagnies
     - Company et Computer doivent maintenant implémenter l'interface Serializable
-    - Utiliser les objets FileOutputStream et ObjectOutputStream afin d'enregistrer la liste de Computers dans un fichier computers.txt
-    - Vous pouvez utiliser cette [ressources en ligne](http://www.jmdoudoux.fr/java/dej/chap-serialisation.htm) afin d'apréhender l'utilisation de ces outils
+    - utiliser les objets FileOutputStream et ObjectOutputStream afin d'enregistrer la liste de Computers dans un fichier computers.txt
+    - vous pouvez utiliser cette [ressource en ligne](http://www.jmdoudoux.fr/java/dej/chap-serialisation.htm) afin d'appréhender l'utilisation de ces outils
 
-### Exercice 3 : Connexion à une vraie base de données
+
+### Exercice 3 : Connexion à votre base de données
 Nous allons créer notre base de données, et la remplir à l'aide des fichiers '1-schema.sql' et '2-entries.sql'.
  - Naviguez jusqu'au dossier contenant '1-schema.sql' et '2-entries.sql'
  - Accédez à votre client mysql
@@ -85,18 +87,17 @@ SOURCE 2-entries.sql
 ```
 
 Une fois votre base de données initialisée et remplie, il devient possible de récupérer ses données dans votre CLI.
- - Créez une classe CompanyDAO permettant de lister les Companies stockée dans la base de donnée et d'en ajouter. Puis une classe ComputerDAO faisant de même avec les Computers.
+ - Créez une classe CompanyDAO permettant de lister les Companies stockées dans la base de donnée et d'en ajouter. Puis une classe ComputerDAO faisant de même avec les Computers.
     - Utiliser JDBC pour effectuer les requètes SQL récupèrant et ajoutant les données.
- - Dans la classe CLI, remplacez les appels à la classe ComputerDB par des appels à vos classe CompanyDAO et ComputerDAO.
+ - Dans la classe Cli, remplacez les appels à la classe ComputerDB par des appels à vos classes CompanyDAO et ComputerDAO.
  
- Vous avez donc obtenu un CLI permettant de communiquer avec la base de donnée de manière compréhensible pour un utilisateur lambda, votre cahier des charges est rempli !
+ Vous avez donc obtenu un CLI permettant de communiquer avec la base de données de manière compréhensible pour un utilisateur lambda, votre cahier des charges est rempli !
 
 Pour aller plus loin :
-- Implémenter la suppression des Computer
-- Implémenter la suppresion des Companies
+- Implémenter la suppression des Computers
+- Implémenter la suppression des Companies
     - Que faire en cas de suppression d'une Company référencée par plusieurs Computer ?
-    - Demandez une confirmation au client lorsque vous détectez ce cas, puis supprimez les Computer concernés avant de supprimer la Company.
-- Implémentez la recherche par critère.
-    - Par nom. Pour cela, interessez vous à la clause LIKE des requêtes SQL
-    - Par date d'entrée ou sortie du parc informatique.
+    - Demandez une confirmation au client lorsque vous détectez ce cas, puis supprimez les Computers concernés avant de supprimer la Company.
+- Implémentez la recherche par nom
+    - Pour cela, interessez vous à la clause LIKE des requêtes SQL
 - Implémentez la mise à jour des Computers/Companies. Permettant de modifier un objet déjà existant en base.
