@@ -38,3 +38,8 @@ Que se passe t'il lorsqu'on ajoute un nouveau Computer et avec un ID de Company 
  - Créer l'interface "Identifiable", implémentée par Company et Computer, qui possède la méthode 'getId()'
  - Le CLI doit maintenant permettre de lister les Computer ET les Company
  - Utiliser la serialization pour sauvegarder et charger la liste d'ordinateurs et de companies, via un ObjectOutputStream
+
+
+### Exercice 3 : ComputerDB CLI
+ - Créer une base de données SQL initialisée avec les fichier '1-schema.sql' & '2-entries.sql'
+ - Utiliser JDBC pour effectuer des requètes SQL qui récupèrent les données des Computers et Companies
